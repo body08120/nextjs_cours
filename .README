@@ -1,0 +1,19 @@
+# Next.js Tutorial
+
+This tutorial is available at the following URL: https://nextjs.org/learn/dashboard-app/getting-started
+
+The goal of this tutorial is to build a financial dashboard with the following features:
+
+    A public home page
+    A login page
+    Protected dashboard pages
+    The ability to add, edit, and delete invoices
+
+The dashboard will also have an accompanying database.
+
+## Notes personnelles
+
+- Environnement 100% conteneurisé : j'utilise `docker compose` avec une image `node:22-alpine`. Les sources locales sont montées dans `/app`, `node_modules` reste dans le conteneur.
+- Corepack est activé dans le Dockerfile, ce qui me permet d'utiliser pnpm sans installation globale (`pnpm i`, `pnpm dev`).
+- Workflow : `docker compose run --rm web <commande>` pour les actions ponctuelles (ex. `pnpm i`), `docker compose up` pour lancer automatiquement `pnpm dev`.
+- Penser à exécuter les commandes pnpm via Docker (pas sur l'hôte) et à éviter de lancer deux `pnpm dev` simultanés (fichier `.next/dev/lock`).
